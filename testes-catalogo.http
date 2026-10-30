@@ -1,0 +1,46 @@
+@catalogo = http://localhost:3001
+
+###
+GET {{catalogo}}/produtos
+
+###
+GET {{catalogo}}/produtos/1
+
+###
+GET {{catalogo}}/produtos/99
+
+###
+POST {{catalogo}}/produtos
+Content-Type: application/json
+
+{ "nome": "Webcam HD", "preco": 149.9, "estoque": 5 }
+
+###
+POST {{catalogo}}/produtos
+Content-Type: application/json
+
+{ "nome": "", "preco": -1 }
+
+###
+POST {{catalogo}}/produtos/1/reservas
+Content-Type: application/json
+
+{ "quantidade": 2 }
+
+###
+POST {{catalogo}}/produtos/999/reservas
+Content-Type: application/json
+
+{ "quantidade": 2 }
+
+###
+POST {{catalogo}}/produtos/1/reservas
+Content-Type: application/json
+
+{ "quantidade": 0 }
+
+###
+POST {{catalogo}}/produtos/1/reservas
+Content-Type: application/json
+
+{ "quantidade": 50 }
